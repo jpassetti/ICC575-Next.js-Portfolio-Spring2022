@@ -1,0 +1,13 @@
+.heading {
+	font-family: Arial;
+	font-weight: bold;
+	&.heading1 {
+		font-size: 4rem;
+	}
+	&.heading2 {
+		font-size: 3rem;
+	}
+	&.heading3 {
+		font-size: 1.5rem;
+	}
+} // heading end
