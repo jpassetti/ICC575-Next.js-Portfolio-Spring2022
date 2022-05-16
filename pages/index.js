@@ -4,10 +4,13 @@ import Image from 'next/image'
 
 // custom components
 import Button from '../components/Button'
+import Col from '../components/Col'
+import Container from '../components/Container'
 import Heading from '../components/Heading'
 import Layout from '../components/Layout'
 import Paragraph from '../components/Paragraph'
 import ProjectsByGenre from '../components/ProjectsByGenre'
+import Row from '../components/Row'
 
 export default function Home() {
   return (
@@ -17,59 +20,64 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-		<Image
-			src="/images/profile.jpg" // Route of the image file
-			height={144} // Desired size with correct aspect ratio
-			width={144} // Desired size with correct aspect ratio
-			alt="Jeff Passetti"
-		/>
+		<Container>
+			<Heading level="2">Hard coded projects</Heading>
+			<Row>
+				<Col xs="12" sm="6" md="4">
+					<Image
+						src="/images/01.jpg"
+						alt="Rocky coast landscape"
+						width={1500}
+						height={1000}
+						layout="responsive"
+					/>
+					<Heading level="3">Project 1 title</Heading>
+					<Paragraph>
+						<Link href="/projects/project-1-title">
+							<a>
+								View project
+							</a>
+						</Link>
+					</Paragraph>
+				</Col>
+				  <Col xs="12" sm="6" md="4">
+					  <Image
+						  src="/images/02.jpg"
+						  alt="Rocky coast landscape"
+						  width={1500}
+						  height={1000}
+						  layout="responsive"
+					  />
+					  <Heading level="3">Project 2 title</Heading>
+					  <Paragraph>
+						  <Link href="/projects/project-2-title">
+							  <a>
+								  View project
+							  </a>
+						  </Link>
+					  </Paragraph>
+				  </Col>
+				  <Col xs="12" sm="6" md="4">
+					  <Image
+						  src="/images/03.jpg"
+						  alt="Rocky coast landscape"
+						  width={1500}
+						  height={1000}
+						  layout="responsive"
+					  />
+					  <Heading level="3">Project 3 title</Heading>
+					  <Paragraph>
+						  <Link href="/projects/project-3-title">
+							  <a>
+								  View project
+							  </a>
+						  </Link>
+					  </Paragraph>
+				  </Col>
+			</Row>
+		</Container>
 
-        <h1 className="title">
-          Visit <Link href="/posts/first-post">
-		  		<a>first post</a>
-		  </Link>
-        </h1>
 
-		<Heading level="1">
-			This is my page title
-		</Heading>
-		<Heading level="2">
-			This is my section title
-		</Heading>
-		<Heading level="3">
-			This is my item title
-		</Heading>
-		
-		<Paragraph intro>
-			This is my intro paragraph.
-		</Paragraph>
-		<Paragraph>
-			Here is my basic paragrrrrrrrrrraph.
-		</Paragraph>
-
-		<Button 
-			label="Register now"
-			path="/register"
-			variant="primary"
-		/>
-		<Button
-			label="Register now"
-			path="/register"
-			variant="secondary"
-		/>
-		<Button
-			label="Register now"
-			path="/register"
-		/>
-
-		<ProjectsByGenre />
-	
-      </main>
-
-      <footer>
-       Copyright Jeff Passetti 2022
-      </footer>
 	</Layout>
 	)
 }
