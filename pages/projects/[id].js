@@ -32,23 +32,15 @@ export async function getStaticProps({ params }) {
 const SingleProjectPage = ({ projectData }) => {
 	//console.log({projectData});
 	//const { title, featuredImage, content } = projectData;
-	const { title, image, content } = projectData.matchingProject;
+	const { title, featuredImage, content } = projectData;
 	return <Layout>
 		<Container>
-			{/*featuredImage &&
+			{featuredImage &&
 				<Image
 					src={featuredImage.node.sourceUrl}
 					alt={featuredImage.node.altText}
 					width={featuredImage.node.mediaDetails.width}
 					height={featuredImage.node.mediaDetails.height}
-				/>
-			*/}
-			{image &&
-				<Image
-					src={`/images/${image}`}
-					alt={title}
-					width={1500}
-					height={1000}
 					layout="responsive"
 				/>
 			}

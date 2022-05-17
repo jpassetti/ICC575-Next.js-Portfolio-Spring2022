@@ -33,6 +33,7 @@ export default function Home({ items }) {
       </Head>
 
 		<Container>
+			{/*
 			<Heading level="2">Hard coded projects</Heading>
 			<Row>
 				<Col xs="12" sm="6" md="4">
@@ -87,7 +88,10 @@ export default function Home({ items }) {
 					  </Paragraph>
 				  </Col>
 			</Row>
+  */}
 
+
+  {/*
 
 			 <Heading level="2">Data array powered projects</Heading>
 			 <Row>
@@ -112,6 +116,35 @@ export default function Home({ items }) {
 				 </Col>
 			 })}
 			</Row>
+
+			*/}
+
+
+			  <Heading level="2">Wordpress API powered projects</Heading>
+			  <Row>
+				  {items.map((item, index) => {
+					  const { title, featuredImage, slug } = item.node;
+					  return <Col key={index} xs="12" sm="6" md="4">
+						  <Image
+							  src={featuredImage.node.sourceUrl}
+							  alt={featuredImage.node.altText}
+							  width={featuredImage.node.mediaDetails.width}
+							  height={featuredImage.node.mediaDetails.height}
+							  layout="responsive"
+						  />
+						  <Heading level="3">{title}</Heading>
+						  <Paragraph>
+							  <Link href={`/projects/${slug}`}>
+								  <a>
+									  View project
+								  </a>
+							  </Link>
+						  </Paragraph>
+					  </Col>
+				  })}
+			  </Row>
+
+
 		</Container>
 
 

@@ -26,7 +26,7 @@ const ProjectsPage = ({ projects }) => {
 			<Heading level="1">Projects</Heading>
 			<Row>
 				{projects.map((project, index) => {
-					const { title, slug, image } = project;
+					const { title, slug, featuredImage } = project.node;
 
 					return <Col 
 						key={index}
@@ -34,23 +34,16 @@ const ProjectsPage = ({ projects }) => {
 						sm="4"
 						md="3"
 					>
-						{/*featuredImage && 
+						{featuredImage && 
 							<Image
 								src={featuredImage.node.sourceUrl}
 								alt={featuredImage.node.altText}
 								width={featuredImage.node.mediaDetails.width}
 								height={featuredImage.node.mediaDetails.height}
-							/>
-						*/}
-						{image &&
-							<Image
-								src={`/images/${image}`}
-								alt={title}
-								width={1500}
-								height={1000}
 								layout="responsive"
 							/>
 						}
+						
 						
 						<Heading level="3">
 							{title}

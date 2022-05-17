@@ -1,6 +1,6 @@
 // next.config.js
 module.exports = {
 	images: {
-		domains: ['test.local'],
+		domains: ['test.local', 'api.jeffpassettidesigns.com'],
 	},
 }
